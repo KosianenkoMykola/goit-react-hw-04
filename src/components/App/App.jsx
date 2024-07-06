@@ -4,9 +4,10 @@ import ImageGallery from '../ImageGallery/ImageGallery';
 import Loader from '../Loader/Loader';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import LoadMoreBtn from '../LoadMoreBtn/LoadMoreBtn';
-import ImageModal from '../ImageModal/ImageModal';
+import { ImageModal } from '../ImageModal/ImageModal';
 import { fetchImages } from '../../image-api';
-// import css from '../App/App.module.css';
+import css from '../App/App.module.css';
+
 
 export default function App() {
   const [images, setImages] = useState([]);
@@ -54,10 +55,10 @@ export default function App() {
   };
 
   return (
-    <div>
+    <div className={css.container}>
       <SearchBar onSubmit={handleSearch} />
       {error && <ErrorMessage message={error} />}
-      <ImageGallery images={images} onImageClick={handleImageClick} />
+      {images.length > 0 && <ImageGallery images={images} onImageClick={handleImageClick} />}
       {isLoading && <Loader />}
       {images.length > 0 && !isLoading && <LoadMoreBtn onClick={handleLoadMore} />}
       {selectedImage && (

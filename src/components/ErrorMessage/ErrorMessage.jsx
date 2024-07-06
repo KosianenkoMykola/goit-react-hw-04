@@ -2,6 +2,6 @@
 
 export default function ErrorMessage({message}) {
     return (
-        <div>{message}</div>
+        <p>Oops, something is wrong, try again later</p>
     )
 }

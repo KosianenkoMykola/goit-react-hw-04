@@ -1,0 +1,7 @@
+.galleryItem {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style: none;
+    justify-content: center
+}
