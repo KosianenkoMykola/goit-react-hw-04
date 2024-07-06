@@ -1,7 +1,9 @@
-export default function ImageCard() {
+// import css from './ImageCard.module.css';
+
+export default function ImageCard({image, onClick}) {
     return (
-        <div>
-            <img src="" alt="" />
-        </div>
+        <div onClick={onClick}>
+            <img src={image.urls.small} alt={image.alt_description}/>
+         </div>
     )
 }
