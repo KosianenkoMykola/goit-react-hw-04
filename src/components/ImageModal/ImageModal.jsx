@@ -6,7 +6,7 @@ export function ImageModal({ isOpen, onRequestClose, image }) {
         <Modal isOpen={isOpen} onRequestClose={onRequestClose} className={css.modal}
         overlayClassName={css.overlay}>
       {image && (
-        <div>
+        <div className={css.modalContent}>
           <img src={image.urls.regular} alt={image.alt_description} className={css.modalImg}/>
           <p>{image.description}</p>
         </div>

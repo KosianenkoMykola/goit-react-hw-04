@@ -8,6 +8,7 @@ export const fetchImages = async (topic, page = 1) => {
     params: {
       query: topic,
       page: page,
+      per_page: "20",
       client_id: key,
     },
   });
